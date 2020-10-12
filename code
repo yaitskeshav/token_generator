@@ -1,0 +1,39 @@
+from tkinter import *
+
+from tkinter import messagebox
+win=Tk()
+win.title("Token Genarator")
+win.geometry("290x100")
+win.resizable(0,0)
+
+def textwin():
+    from datetime import datetime
+    now = datetime.now()
+    root_dt = now.strftime("%H%M%S%d%m%y")
+    dt_string = now.strftime("%H%M%S%d%m%y")          # dd/mm/YY H:M:S
+    global strprint
+    strprint= "Your Token No. is : " + dt_string
+def copy_button():
+    clip = Tk()
+    clip.withdraw()
+    clip.clipboard_clear()
+    clip.clipboard_append(strprint)
+    
+    clip.destroy()
+  
+
+B1 = Button(win, text = "Generate Token",bg="black",fg="red",activebackground="green",height=3,width=80,command = textwin)
+B1.place(x = 35,y = 50)
+B1.pack()
+
+
+
+B2=Button(win,text="Copy Text",bg="black",fg="red",activebackground="black",activeforeground="Yellow",height=3,width=80, command=copy_button)
+B2.place(x=55,y=60)
+B2.pack()
+
+
+
+
+win.mainloop()
+
