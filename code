@@ -9,7 +9,7 @@ win.resizable(0,0)
 def textwin():
     from datetime import datetime
     now = datetime.now()
-    root_dt = now.strftime("%H%M%S%d%m%y")
+    
     dt_string = now.strftime("%H%M%S%d%m%y")          # dd/mm/YY H:M:S
     global strprint
     strprint= "Your Token No. is : " + dt_string
